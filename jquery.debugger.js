@@ -28,7 +28,11 @@
 
                 eventData['handler'] = function() {
                     debugger;
-                    debuggableFunction.apply(this, arguments);
+                    var returnValue = debuggableFunction.apply(this, arguments);
+
+                    if(typeof returnValue != 'undefined') {
+                        return returnValue;
+                    }
                 };
             });
         });
@@ -63,7 +67,11 @@
 
                 eventData['handler'] = function() {
                     debugger;
-                    debuggableFunction.apply(this, arguments);
+                    var returnValue = debuggableFunction.apply(this, arguments);
+
+                    if(typeof returnValue != 'undefined') {
+                        return returnValue;
+                    }
                 };
             });
         });
