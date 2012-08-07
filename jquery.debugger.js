@@ -45,7 +45,7 @@
                 return;
             }
 
-            var listOfEventData = events['live'];
+            var listOfEventData = events[event];
 
             if(!listOfEventData) {
                 return;
@@ -59,9 +59,9 @@
                     return;
                 }
 
-                var debuggableFunction = eventData['origHandler'];
+                var debuggableFunction = eventData['handler'];
 
-                eventData['origHandler'] = function() {
+                eventData['handler'] = function() {
                     debugger;
                     debuggableFunction.apply(this, arguments);
                 };
