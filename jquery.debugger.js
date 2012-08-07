@@ -65,8 +65,6 @@
                     debugger;
                     debuggableFunction.apply(this, arguments);
                 };
-
-                console.log(eventData);
             });
         });
     };
